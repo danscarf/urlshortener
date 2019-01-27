@@ -1,7 +1,14 @@
 package com.acme.urlshortener;
 
-public class ShortCode {
+import java.io.Serializable;
 
+import org.springframework.data.redis.core.RedisHash;
+
+@RedisHash("ShortCode")
+public class ShortCode implements Serializable {
+
+
+	private static final long serialVersionUID = 1L;
 	private final String url;
 	private final String guid;
 		
@@ -11,7 +18,7 @@ public class ShortCode {
 	}
 	
 	
-	public String GetUrl() {
+	public String getUrl() {
 		return this.url;
 	}
 	

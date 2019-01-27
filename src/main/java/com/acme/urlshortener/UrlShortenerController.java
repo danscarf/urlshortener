@@ -14,13 +14,12 @@ public class UrlShortenerController {
 
 	private final AtomicLong counter = new AtomicLong();
 
-	@GetMapping("/getshortcode")
+	@GetMapping("/geturl")
 	@ResponseBody
-	public ShortCode getShortCode(@RequestParam(name="url", required=false, defaultValue="https://localhost") String url){
+	public ShortCode getUrlFromShortCode(@RequestParam(name="url", required=false, defaultValue="https://localhost") String url){
 		
 		String uuid = UUID.randomUUID().toString();
-		ShortCode sc = new ShortCode(url, uuid);
-		return sc;
+		return new ShortCode(url, uuid);
 	}
 
 	
@@ -30,10 +29,6 @@ public class UrlShortenerController {
 		
 		String uuid = UUID.randomUUID().toString();
 		
-		ShortCode sc = new ShortCode(url, uuid);
-		
-		return sc;
+		return new ShortCode(url, uuid);
 	}
-	
-
 }
