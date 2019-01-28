@@ -11,6 +11,8 @@ public class ShortCode implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private final String url;
 	private final String guid;
+	
+	private String id;
 		
 	public ShortCode (String url, String guid) {
 		this.url = url;
@@ -24,5 +26,20 @@ public class ShortCode implements Serializable {
 	
 	public String getGuid() {
 		return this.guid;
+	}
+
+
+	public String getId() {
+		return id;
+	}
+
+
+	public void setId(String id) {
+		this.id = id;
+	}
+	
+	@Override
+	public String toString() {
+		return "Shortcode{" + "id='" + id + '\'' + ", url='" + url + '\'' + ", guid=\'" + guid+ "'}";
 	}
 }
